@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './index.css';
 import React, { Component } from "react";
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -140,7 +139,7 @@ class App extends Component {
                     setTimer={this.setTimer}
                     isRunning={isRunning}
                   />
-                }
+                }ƒ
               </div>
               <div className="timer">
                 <h2>
