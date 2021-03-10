@@ -1,15 +1,14 @@
 import './index.css';
 import React, { Component } from "react";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faForward, faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
-import ReactDOM from "react-dom";
+import { faForward, faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Play from "./Play";
 import PlayAgain from "./PlayAgain";
 import Timer from "./Timer";
 import Cat from "./Cat";
-import Like from "./Like";
-import Dislike from "./Dislike";
-import Skip from "./Skip";
+import Likes from "./Likes";
+// import Dislike from "./Dislike";
+// import Skip from "./Skip";
 import Results from "./Results";
 library.add(faForward, faHeart, faTimes)
 
@@ -119,7 +118,6 @@ class App extends Component {
 
   render() {
     const isRunning = this.state.seconds < 60 && this.state.seconds > 0
-    console.log(isRunning)
     return (
       <div className="container">
         <div className="container-left">
@@ -139,7 +137,7 @@ class App extends Component {
                     setTimer={this.setTimer}
                     isRunning={isRunning}
                   />
-                }ƒ
+                }
               </div>
               <div className="timer">
                 <h2>
@@ -148,7 +146,7 @@ class App extends Component {
                   <Timer
                     minutes={this.state.minutes}
                     seconds={this.state.seconds}
-                     ats={this.state.cats}
+                    cats={this.state.cats}
                   />
                 }
                  </h2>
@@ -184,33 +182,15 @@ class App extends Component {
 
             <div className="button-parent">
               <div className="like-buttons">
-                <Like
+                <Likes
                   cats={this.state.cats}
                   index={this.state.cats[this.state.index]}
                   handleCats={this.handleCats}
                   likeArray={this.state.likeArray}
                   sortLikes={this.sortLikes}
                   seenArray={this.state.seenArray}
-                  sortSeen={this.sortSeen}
-                  isRunning={isRunning}
-                />
-                <Dislike
-                  cats={this.state.cats}
-                  index={this.state.cats[this.state.index]}
-                  handleCats={this.handleCats}
-                  dislikeArray={this.state.dislikeArray}
-                  sortDislikes={this.sortDislikes}
-                  seenArray={this.state.seenArray}
-                  sortSeen={this.sortSeen}
-                  isRunning={isRunning}
-                />
-                <Skip
-                  cats={this.state.cats}
-                  index={this.state.cats[this.state.index]}
-                  handleCats={this.handleCats}
-                  skipArray={this.state.skipArray}
                   sortSkips={this.sortSkips}
-                  seenArray={this.state.seenArray}
+                  sortDislikes={this.sortDislikes}
                   sortSeen={this.sortSeen}
                   isRunning={isRunning}
                 />
