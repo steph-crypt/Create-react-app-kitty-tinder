@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
 class Cat extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
     var { cats, cat } = this.props;
