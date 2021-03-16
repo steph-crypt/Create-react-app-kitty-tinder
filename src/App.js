@@ -124,36 +124,32 @@ class App extends Component {
           <h1 id="header">Kitty Tinder</h1>
             <h3>You have 1 minute to choose your favorite and least favorite cats!</h3>
               <div className="play">
-                {this.state.seconds === 0
-                 ? <PlayAgain
+                <div className="timer">
+                {(this.state.seconds >= 60)
+                 ? <Play
+                    handlePlay={this.handlePlay}
+                    setTimer={this.setTimer}
+                    isRunning={isRunning}
+                  />
+                  :<Timer
+                    minutes={this.state.minutes}
+                    seconds={this.state.seconds}
+                    cats={this.state.cats}
+                  />
+
+                }
+                </div>
+              </div>
+              <div className="results">
+                {(this.state.seconds === 0)
+                &&<div>
+                  <PlayAgain
                     handlePlay={this.handlePlay}
                     setTimer={this.setTimer}
                     resetTimer={this.resetTimer}
                     resetArrays={this.resetArrays}
                     resetCats={this.resetCats}
                     />
-                 : <Play
-                    handlePlay={this.handlePlay}
-                    setTimer={this.setTimer}
-                    isRunning={isRunning}
-                  />
-                }
-              </div>
-              <div className="timer">
-                <h2>
-                {!(this.state.seconds === 0)
-                &&
-                  <Timer
-                    minutes={this.state.minutes}
-                    seconds={this.state.seconds}
-                    cats={this.state.cats}
-                  />
-                }
-                 </h2>
-              </div>
-              <div className="results">
-                {(this.state.seconds === 0)
-                &&
                   <Results
                     cats={this.state.cats}
                     likeArray={this.state.likeArray}
@@ -161,6 +157,7 @@ class App extends Component {
                     skipArray={this.state.skipArray}
                     seenArray={this.state.seenArray}
                   />
+                </div>
                 }
               </div>
         </div>
