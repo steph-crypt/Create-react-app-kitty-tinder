@@ -109,7 +109,7 @@ h3 {
   text-shadow: 1px 1px 3px grey;
 }
 
-#timer strong {
+#timer span {
   font-size: 30px;
 }
 
@@ -123,7 +123,7 @@ h3 {
   margin-bottom: 20px;
 }
 
-.like-results strong {
+.like-results span {
   color: #ef6a57;
 }
 

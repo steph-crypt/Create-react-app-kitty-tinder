@@ -8,10 +8,10 @@ class Results extends React.Component {
         <div className="like-results">
           <h1>Your Results</h1>
            <br></br>
-            <h2>Total Cats Seen: <strong>{seenArray.length}</strong></h2>
-            <h2>Likes: <strong>{likeArray.length}</strong></h2>
-            <h2>Dislikes: <strong>{dislikeArray.length}</strong></h2>
-            <h2>Skips: <strong>{skipArray.length}</strong></h2>
+            <h2>Total Cats Seen: <span>{seenArray.length}</span></h2>
+            <h2>Likes: <span>{likeArray.length}</span></h2>
+            <h2>Dislikes: <span>{dislikeArray.length}</span></h2>
+            <h2>Skips: <span>{skipArray.length}</span></h2>
       </div>
     );
   }

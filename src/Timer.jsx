@@ -6,7 +6,7 @@ class Timer extends React.Component {
     let {seconds} = this.props
     return (
       <div id="timer">
-        <h2>{seconds < 10 ? `0${seconds}` : seconds}<strong>secs</strong></h2>
+        <h2>{seconds < 10 ? `0${seconds}` : seconds}<span>secs</span></h2>
       </div>
     );
   }
